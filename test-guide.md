@@ -61,7 +61,7 @@ uv sync --project booping-python
 
    ```bash
    cd /home/anton/Dev/@A/claude-booping
-   vault/benchmarks/_scripts/bench-score process --benchmark frontmatter-update-e2e \
+   _scripts/bench-score process --benchmark frontmatter-update-e2e \
      --ndjson ~/.tmp/pi-developer/freeze-{ts}-{model_slug}.ndjson \
      | jq '.run | {wall, freezes, freeze_ms}'
    ```

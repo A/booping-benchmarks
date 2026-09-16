@@ -73,7 +73,7 @@ benchmarks:
       - newline-and-tab-bearing-values-round-trip.txtar
       - malformed-append-pair-is-rejected.txtar
       - a-real-macro-runs-and-its-output-lands.txtar
-    mutations_dir: vault/benchmarks/mutations/frontmatter-update-e2e
+    mutations_dir: mutations/frontmatter-update-e2e
     mutations:
       command: mutation_e2e
       failure_pattern: "^FAILED\\s+(\\S+\\.txtar)"

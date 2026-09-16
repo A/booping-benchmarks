@@ -26,7 +26,7 @@ Run the benchmark in ~/Claude/notes/claude_booping_benchmark.md with llama-local
 
 These are the `frontmatter-update-e2e` entry in [index.md](index.md)'s registry frontmatter, which is also where the scoring weights and the etalon corpus live. The registry is authoritative; this table is its readable form.
 
-`.benchmarks/` is gitignored in the source repo, so a workspace is invisible to it. Two vaults are in play and must not be confused: the workspace's own `vault/` is the sprint's scratch copy — the plan under test, its milestone statuses, the checkboxes the sprint flips — and dies with the clone, while the scorecard, the run details and the registry live in the source repo's vault and are the only thing committed. Prune a workspace with `rm -rf .benchmarks/{dir}` once you no longer want its branch — nothing pushes it for you.
+`.benchmarks/` is gitignored in the source repo, so a workspace is invisible to it. The workspace's own `vault/` is the sprint's scratch copy — the plan under test, its milestone statuses, the checkboxes the sprint flips — and dies with the clone; the scorecard, the run details and the registry live in this repo and are the only thing committed. Prune a workspace with `rm -rf .benchmarks/{dir}` once you no longer want its branch — nothing pushes it for you.
 
 ## Steps
 

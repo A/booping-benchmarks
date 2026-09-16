@@ -918,6 +918,10 @@ def collect_attempts(
         names = milestone_names(tree, entry)
         feedback = feedback_counts(tree, entry)
         changed = diff_lines(tree, entry)
+    if getattr(args, "plan_segment", None):
+        # One agent ran the whole plan in one segment: score it as a single
+        # plan-scoped attempt instead of requiring a segment per milestone.
+        names = [args.plan_segment]
     picked = select_logs(log_path, names, args.since, args.until)
     attempts = [
         load_attempt(log_path, name, seg.ts, seg.start, seg.end)
@@ -1683,6 +1687,9 @@ def main() -> None:
         sub.add_argument("--ndjson", action="append", default=[])
         sub.add_argument("--since")
         sub.add_argument("--until")
+        # One-agent runs: the label of the single segment covering the whole
+        # plan; scores as one plan-scoped attempt (att column shows one value).
+        sub.add_argument("--plan-segment")
         if name != "process":
             sub.add_argument("--process-json")
             sub.add_argument("--endpoint")
